@@ -1,0 +1,49 @@
+.row{
+    margin-left: 20px;
+    color: white;
+}
+
+.row_posters {
+    display: flex;
+
+    /* any overflow along y axis should be hidden */
+    overflow-y: hidden;
+
+    /* adding a scrollbar along the x axis */
+    overflow-x: scroll;
+
+    /* for giving the posters room to grow */
+    /* without padding the posters crop when growing */
+    padding: 20px;
+}
+
+.row_posters::-webkit-scrollbar{
+    /* telling it to not display scroll bar but keep the functionality */
+    display: none
+}
+
+.row_poster{
+    /* regardless of the size it will keep the aspect ratio fixed */
+    object-fit: contain;
+    /* fix the width of the thing so that it fits the screen */
+    width: 100%; 
+    max-height: 140px;
+    /* adding a transition for changing the size. The animation will happen for 450ms */
+    transition: transform 450ms;
+
+    /* placing margin in the right of the posters */
+    margin-right: 10px;
+}
+
+.row_poster:hover {
+    /* for the transition we r saying it to scale or become big 1.08 times the original size */
+    transform: scale(1.08);
+}
+
+.row_posterLarge {
+    max-height: 250px;
+}
+
+.row_posterLarge:hover{
+    transform: scale(1.09);
+}
